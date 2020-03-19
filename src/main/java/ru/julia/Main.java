@@ -107,26 +107,38 @@ public class Main {
         int salo = 500;
         if ((alreadyEaten + chocolate) > limit) {
             System.out.println("Шоколадку есть нельзя");
-        } else
-        if ((alreadyEaten + chocolate) <= limit) {
+        } else if ((alreadyEaten + chocolate) <= limit) {
             System.out.println("Можно сьесть шоколадку");
         }
         if ((alreadyEaten + kasha) > limit) {
             System.out.println("Кашу есть нельзя");
-        } else
-        if ((alreadyEaten + kasha) <= limit) {
+        } else if ((alreadyEaten + kasha) <= limit) {
             System.out.println("Можно сьесть кашу");
         }
         if ((alreadyEaten + salo) > limit) {
             System.out.println("Сало есть нельзя");
-        } else
-        if ((alreadyEaten + salo) <= limit) {
+        } else if ((alreadyEaten + salo) <= limit) {
             System.out.println("Можно сьесть сало");
         }
         //4) Бой джедаев и ситхов
-
-
-
+        boolean djedayHigherSith = false;
+        boolean sithHigherDjeday = false;
+        boolean sithNameIsPalpatin= false;
+        boolean obiOneVsDartMole = false;
+        if (obiOneVsDartMole) {
+            System.out.println("Выиграл джедай");
+            return;
+        }
+        if (sithNameIsPalpatin) {
+            System.out.println("Выиграл ситх");
+            return;
+        }
+        if ((djedayHigherSith) || (sithHigherDjeday)) {
+            System.out.println("Выиграл Джедай");
+        } else
+        {
+            System.out.println("Выиграл ситх");
+        }
     }
 
     public static void printObgect(Object object) {
