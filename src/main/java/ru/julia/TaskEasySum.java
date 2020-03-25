@@ -8,16 +8,16 @@ import java.math.BigInteger;
 
 public class TaskEasySum {
     public static void main(String[] args) {
-        BigInteger a = new BigInteger("1");
-        BigInteger b = new BigInteger("2");
-        BigInteger sum = a;
+        BigInteger chlen = new BigInteger("1");
+        BigInteger mnozitel = new BigInteger("2");
+        BigInteger sum = chlen;
 //        System.out.println(sum);
-//        sum = sum.add(b);
+//        sum = sum.add(mnozitel);
 //        System.out.println(sum);
         for (int i = 0; i < 100; i++) {
-            a = a.multiply(b);
-            System.out.println(a);
-            sum = sum.add(a);
+            chlen = chlen.multiply(mnozitel);
+            System.out.println(chlen);
+            sum = sum.add(chlen);
             System.out.println("sum = " + sum);
         }
     }
