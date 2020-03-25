@@ -6,17 +6,9 @@ package ru.julia;
 public class TaskStrangerSum {
     public static void main(String[] args) {
         int sum = 0;
-        int raznost = 0;
-        int result = 0;
         for (int i = 1; i < 101; i = i + 2) {
-            sum = sum + i;
+            sum = sum + i - (i + 1);
+            System.out.println(sum);
         }
-        System.out.println(sum);
-        for (int i = 2; i < 101; i = i + 2) {
-            raznost = raznost + i;
-        }
-        System.out.println(raznost);
-        result = sum - raznost;
-        System.out.println(result);
     }
 }
