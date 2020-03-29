@@ -8,9 +8,9 @@ package ru.julia;
 public class EasyNumbers {
     public static void main(String[] args) {
         int a = 2;
-        prostoeChislo(a);
+        System.out.println(prostoeChislo(a));
     }
-    public static void prostoeChislo(int chislo) {
+    public static boolean prostoeChislo(int chislo) {
         int count = 0;
         for (int i = 2; i < chislo; i++) {
             if (chislo % i == 0) {
@@ -18,9 +18,9 @@ public class EasyNumbers {
             }
         }
         if (count > 0) {
-            System.out.println("Число не простое");
+            return false;
         } else {
-            System.out.println("Число простое");
+            return true;
         }
     }
 }
