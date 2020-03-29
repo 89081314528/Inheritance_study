@@ -10,6 +10,7 @@ public class EasyNumbers {
         int a = 13;
         System.out.println(prostoeChislo(a));
     }
+
     public static boolean prostoeChislo(int chislo) {
         int count = 0;
         for (int i = 2; i < chislo; i++) {
@@ -20,6 +21,6 @@ public class EasyNumbers {
                 }
             }
         }
-            return true;
+        return true;
     }
 }
