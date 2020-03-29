@@ -7,7 +7,7 @@ package ru.julia;
 
 public class EasyNumbers {
     public static void main(String[] args) {
-        int a = 2;
+        int a = 13;
         System.out.println(prostoeChislo(a));
     }
     public static boolean prostoeChislo(int chislo) {
@@ -15,12 +15,11 @@ public class EasyNumbers {
         for (int i = 2; i < chislo; i++) {
             if (chislo % i == 0) {
                 count = count + 1;
+                if (count > 0) {
+                    return false;
+                }
             }
         }
-        if (count > 0) {
-            return false;
-        } else {
             return true;
-        }
     }
 }
