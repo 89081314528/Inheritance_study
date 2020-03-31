@@ -12,6 +12,25 @@ package ru.julia;
  */
 public class ZapasyGrechki {
     public static void main(String[] args) {
-
+        int initialStockKg = 100;
+        int costStorageOneKgPerMonth = 100;
+        int eatPerMonthKg = 6;
+        int numberOfMonth = 3;
+        System.out.println(allCostStorage(initialStockKg,eatPerMonthKg,costStorageOneKgPerMonth));
+        System.out.println(allCostStorage2(numberOfMonth,eatPerMonthKg,costStorageOneKgPerMonth));
+    }
+    public static int allCostStorage(int initialStock, int eatPerMonthKg, int costStorageOneKgPerMonth) {
+        int allCostStorage = 0;
+        for (int i = initialStock; i > 0; i = i - eatPerMonthKg) {
+            allCostStorage = allCostStorage + i * costStorageOneKgPerMonth;
+        }
+        return allCostStorage;
+    }
+    public static int allCostStorage2(int numberOfMonth, int eatPerMonthKg, int costStorageOneKgPerMonth) {
+        int allCostStorage = 0;
+        for (int i = numberOfMonth * eatPerMonthKg; i > 0; i = i - 6) {
+            allCostStorage = allCostStorage + i * costStorageOneKgPerMonth;
+        }
+        return allCostStorage;
     }
 }
