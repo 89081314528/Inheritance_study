@@ -21,15 +21,15 @@ public class ZapasyGrechki {
     }
     public static int allCostStorage(int initialStock, int eatPerMonthKg, int costStorageOneKgPerMonth) {
         int allCostStorage = 0;
-        for (int i = initialStock; i > 0; i = i - eatPerMonthKg) {
-            allCostStorage = allCostStorage + i * costStorageOneKgPerMonth;
+        for (int currentStock = initialStock; currentStock > 0; currentStock = currentStock - eatPerMonthKg) {
+            allCostStorage = allCostStorage + currentStock * costStorageOneKgPerMonth;
         }
         return allCostStorage;
     }
     public static int allCostStorage2(int numberOfMonth, int eatPerMonthKg, int costStorageOneKgPerMonth) {
         int allCostStorage = 0;
-        for (int i = numberOfMonth * eatPerMonthKg; i > 0; i = i - 6) {
-            allCostStorage = allCostStorage + i * costStorageOneKgPerMonth;
+        for (int currentStock = numberOfMonth * eatPerMonthKg; currentStock > 0; currentStock = currentStock - 6) {
+            allCostStorage = allCostStorage + currentStock * costStorageOneKgPerMonth;
         }
         return allCostStorage;
     }
