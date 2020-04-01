@@ -7,49 +7,41 @@ package ru.julia;
  */
 public class DataPrint {
     public static void main(String[] args) {
-        int currentYear = 2020;
-        int currentMonth = 4;
+        int startYear = 2020;
+        int startMonth = 4;
         int numberOfMonth = 45;
         int monthlyPayment = 16805;
         int countYear = 0;
-        for (int i = currentMonth; i < numberOfMonth + currentMonth; i++) {
-            if ((i - 1) % 12 == 0) {
+        int currentYear = 0;
+        for (int currentMonth = startMonth; currentMonth < numberOfMonth + startMonth; currentMonth++) {
+            if ((currentMonth - 1) % 12 == 0) {
                 countYear = countYear + 1;
             }
-            if (i % 12 == 1) {
-                System.out.println(currentYear + countYear + " january " + monthlyPayment);
-            } else
-            if (i % 12 == 2) {
-                System.out.println(currentYear + countYear + " february " + monthlyPayment);
-            } else
-            if (i % 12 == 3) {
-                System.out.println(currentYear + countYear + " march " + monthlyPayment);
-            } else
-            if (i % 12 == 4) {
-                System.out.println(currentYear + countYear + " april " + monthlyPayment);
-            } else
-            if (i % 12 == 5) {
-                System.out.println(currentYear + countYear + " may " + monthlyPayment);
-            } else
-            if (i % 12 == 6) {
-                System.out.println(currentYear + countYear + " june " + monthlyPayment);
-            } else
-            if (i % 12 == 7) {
-                System.out.println(currentYear + countYear + " july " + monthlyPayment);
-            } else
-            if (i % 12 == 8) {
-                System.out.println(currentYear + countYear + " august " + monthlyPayment);
-            } else
-            if (i % 12 == 9) {
-                System.out.println(currentYear + countYear + " september " + monthlyPayment);
-            } else
-            if (i % 12 == 10) {
-                System.out.println(currentYear + countYear + " october " + monthlyPayment);
-            } else
-            if (i % 12 == 11) {
-                System.out.println(currentYear + countYear + " november " + monthlyPayment);
+            currentYear = startYear + countYear;
+            if (currentMonth % 12 == 1) {
+                System.out.println(currentYear + " january " + monthlyPayment);
+            } else if (currentMonth % 12 == 2) {
+                System.out.println(currentYear + " february " + monthlyPayment);
+            } else if (currentMonth % 12 == 3) {
+                System.out.println(currentYear + " march " + monthlyPayment);
+            } else if (currentMonth % 12 == 4) {
+                System.out.println(currentYear + " april " + monthlyPayment);
+            } else if (currentMonth % 12 == 5) {
+                System.out.println(currentYear + " may " + monthlyPayment);
+            } else if (currentMonth % 12 == 6) {
+                System.out.println(currentYear + " june " + monthlyPayment);
+            } else if (currentMonth % 12 == 7) {
+                System.out.println(currentYear + " july " + monthlyPayment);
+            } else if (currentMonth % 12 == 8) {
+                System.out.println(currentYear + " august " + monthlyPayment);
+            } else if (currentMonth % 12 == 9) {
+                System.out.println(currentYear + " september " + monthlyPayment);
+            } else if (currentMonth % 12 == 10) {
+                System.out.println(currentYear + " october " + monthlyPayment);
+            } else if (currentMonth % 12 == 11) {
+                System.out.println(currentYear + " november " + monthlyPayment);
             } else {
-                System.out.println(currentYear + countYear + " december " + monthlyPayment);
+                System.out.println(currentYear + " december " + monthlyPayment);
                 System.out.println("----------------------------------");
             }
         }
