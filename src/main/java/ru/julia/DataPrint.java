@@ -8,48 +8,52 @@ package ru.julia;
 public class DataPrint {
     public static void main(String[] args) {
         int startYear = 2020;
-        int startMonth = 4;
-        int numberOfMonth = 45;
+        int startMonth = 12;
+        int numberOfMonth = 15;
         int monthlyPayment = 16805;
         int countYear = 0;
         for (int currentMonth = startMonth; currentMonth < numberOfMonth + startMonth; currentMonth++) {
             int currentYear = 0;
-            if ((currentMonth - 1) % 12 == 0) {
+            if ((currentMonth - 1) % 12 == 0 && currentMonth > 12) {
                 countYear = countYear + 1;
             }
             currentYear = startYear + countYear;
-            System.out.println(currentYear + whatMonth(currentMonth) + monthlyPayment);
+            int monthNumber = currentMonth;
+            if (currentMonth > 12) {
+                monthNumber = currentMonth - 12 * countYear;
+            }
+            System.out.println(currentYear + " " + whatMonth(monthNumber) + " " + monthlyPayment);
             if (currentMonth % 12 == 0) {
                 System.out.println("----------------------");
             }
         }
     }
 
-    public static String whatMonth(int currentMonth) {
-        if (currentMonth % 12 == 1) {
-            return " january ";
-        } else if (currentMonth % 12 == 2) {
-            return " february ";
-        } else if (currentMonth % 12 == 3) {
-            return " march ";
-        } else if (currentMonth % 12 == 4) {
-            return " april ";
-        } else if (currentMonth % 12 == 5) {
-            return " may ";
-        } else if (currentMonth % 12 == 6) {
-            return " june ";
-        } else if (currentMonth % 12 == 7) {
-            return " july ";
-        } else if (currentMonth % 12 == 8) {
-            return " august ";
-        } else if (currentMonth % 12 == 9) {
-            return " september ";
-        } else if (currentMonth % 12 == 10) {
-            return " october ";
-        } else if (currentMonth % 12 == 11) {
-            return " november ";
+    public static String whatMonth(int monthNumber) {
+        if (monthNumber == 1) {
+            return "january";
+        } else if (monthNumber == 2) {
+            return "february";
+        } else if (monthNumber == 3) {
+            return "march";
+        } else if (monthNumber == 4) {
+            return "april";
+        } else if (monthNumber == 5) {
+            return "may";
+        } else if (monthNumber == 6) {
+            return "june";
+        } else if (monthNumber == 7) {
+            return "july";
+        } else if (monthNumber == 8) {
+            return "august";
+        } else if (monthNumber == 9) {
+            return "september";
+        } else if (monthNumber == 10) {
+            return "october";
+        } else if (monthNumber == 11) {
+            return "november";
         } else
-            return " december ";
+            return "december";
     }
 }
 
