@@ -18,7 +18,7 @@ public class DataPrint {
                 countYear = countYear + 1;
             }
             currentYear = startYear + countYear;
-            int monthNumber = currentMonth - 12 * countYear;
+            int monthNumber = currentMonth % 12;
             System.out.println(currentYear + " " + whatMonth(monthNumber) + " " + monthlyPayment);
             if (currentMonth % 12 == 0) {
                 System.out.println("----------------------");
