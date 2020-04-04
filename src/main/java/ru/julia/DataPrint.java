@@ -25,7 +25,7 @@ public class DataPrint {
     }
 
     public static void printPayments(Payment payment) {
-        System.out.println(payment.getCurrentYear() + " " + payment.whatMonth(payment.getMonthNumber()) + " " + payment.getMonthlyPayment());
+        System.out.println(payment.getCurrentYear() + " " + payment.whatMonth() + " " + payment.getMonthlyPayment());
         if (payment.getCurrentMonth() % 12 == 0) {
             System.out.println("----------------------");
         }

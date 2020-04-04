@@ -29,7 +29,7 @@ public class Payment {
         this.monthlyPayment = monthlyPayment;
         this.currentMonth = currentMonth;
     }
-    public String whatMonth(final int monthNumber) {
+    public String whatMonth() {
         if (monthNumber == 1) {
             return "january";
         } else if (monthNumber == 2) {
