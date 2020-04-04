@@ -1,10 +1,10 @@
 package ru.julia;
 
 public class Payment {
-    final int currentYear;
-    final int monthNumber;
-    final int monthlyPayment;
-    final int currentMonth;
+    private final int currentYear;
+    private final int monthNumber;
+    private final int monthlyPayment;
+    private final int currentMonth;
 
     public int getCurrentYear() {
         return currentYear;
