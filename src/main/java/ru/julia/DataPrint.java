@@ -21,6 +21,7 @@ public class DataPrint {
             final int monthNumber = currentMonth % 12;
             Payment payment = new Payment(currentYear, monthNumber, monthlyPayment, currentMonth);
             printPayments(payment);
+            System.out.println(payment.isLastMonth());
         }
     }
 

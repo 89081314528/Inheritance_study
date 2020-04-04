@@ -14,7 +14,6 @@ public class Payment {
         return monthNumber;
     }
 
-
     public int getMonthlyPayment() {
         return monthlyPayment;
     }
@@ -29,6 +28,7 @@ public class Payment {
         this.monthlyPayment = monthlyPayment;
         this.currentMonth = currentMonth;
     }
+
     public String whatMonth() {
         if (monthNumber == 1) {
             return "january";
@@ -54,5 +54,12 @@ public class Payment {
             return "november";
         } else
             return "december";
+    }
+
+    public boolean isLastMonth() {
+        if (monthNumber == 0) {
+            return true;
+        }
+        return false;
     }
 }
