@@ -9,7 +9,7 @@ public class DataPrint {
     public static void main(String[] args) {
         int startYear = 2020;
         int startMonth = 12;
-        int numberOfMonth = 15;
+        int numberOfMonth = 5;
         int monthlyPayment = 16805;
         int countYear = 0;
         for (int currentMonth = startMonth; currentMonth < numberOfMonth + startMonth; currentMonth++) {
@@ -18,10 +18,7 @@ public class DataPrint {
                 countYear = countYear + 1;
             }
             currentYear = startYear + countYear;
-            int monthNumber = currentMonth;
-            if (currentMonth > 12) {
-                monthNumber = currentMonth - 12 * countYear;
-            }
+            int monthNumber = currentMonth - 12 * countYear;
             System.out.println(currentYear + " " + whatMonth(monthNumber) + " " + monthlyPayment);
             if (currentMonth % 12 == 0) {
                 System.out.println("----------------------");
