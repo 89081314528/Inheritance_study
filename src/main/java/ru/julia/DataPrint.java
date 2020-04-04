@@ -19,14 +19,18 @@ public class DataPrint {
             }
             currentYear = startYear + countYear;
             final int monthNumber = currentMonth % 12;
-            System.out.println(currentYear + " " + whatMonth(monthNumber) + " " + monthlyPayment);
-            if (currentMonth % 12 == 0) {
-                System.out.println("----------------------");
-            }
+            printPayments(currentYear, monthNumber, monthlyPayment, currentMonth);
         }
     }
 
-    public static String whatMonth(int monthNumber) {
+    public static void printPayments(int currentYear, int monthNumber, int monthlyPayment, int currentMonth) {
+        System.out.println(currentYear + " " + whatMonth(monthNumber) + " " + monthlyPayment);
+        if (currentMonth % 12 == 0) {
+            System.out.println("----------------------");
+        }
+    }
+
+    public static String whatMonth(final int monthNumber) {
         if (monthNumber == 1) {
             return "january";
         } else if (monthNumber == 2) {
