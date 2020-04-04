@@ -8,7 +8,7 @@ package ru.julia;
 public class DataPrint {
     public static void main(String[] args) {
         final int startYear = 2020;
-        final int startMonth = 12;
+        final int startMonth = 11;
         final int numberOfMonth = 5;
         final int monthlyPayment = 16805;
         int countYear = 0;
@@ -19,13 +19,14 @@ public class DataPrint {
             }
             currentYear = startYear + countYear;
             final int monthNumber = currentMonth % 12;
-            printPayments(currentYear, monthNumber, monthlyPayment, currentMonth);
+            Payment payment = new Payment(currentYear, monthNumber, monthlyPayment, currentMonth);
+            printPayments(payment);
         }
     }
 
-    public static void printPayments(int currentYear, int monthNumber, int monthlyPayment, int currentMonth) {
-        System.out.println(currentYear + " " + whatMonth(monthNumber) + " " + monthlyPayment);
-        if (currentMonth % 12 == 0) {
+    public static void printPayments(Payment payment) {
+        System.out.println(payment.currentYear + " " + whatMonth(payment.monthNumber) + " " + payment.monthlyPayment);
+        if (payment.currentMonth % 12 == 0) {
             System.out.println("----------------------");
         }
     }
