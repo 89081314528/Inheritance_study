@@ -25,37 +25,37 @@ public class DataPrint {
     }
 
     public static void printPayments(Payment payment) {
-        System.out.println(payment.getCurrentYear() + " " + whatMonth(payment.getMonthNumber()) + " " + payment.getMonthlyPayment());
+        System.out.println(payment.getCurrentYear() + " " + payment.whatMonth(payment.getMonthNumber()) + " " + payment.getMonthlyPayment());
         if (payment.getCurrentMonth() % 12 == 0) {
             System.out.println("----------------------");
         }
     }
 
-    public static String whatMonth(final int monthNumber) {
-        if (monthNumber == 1) {
-            return "january";
-        } else if (monthNumber == 2) {
-            return "february";
-        } else if (monthNumber == 3) {
-            return "march";
-        } else if (monthNumber == 4) {
-            return "april";
-        } else if (monthNumber == 5) {
-            return "may";
-        } else if (monthNumber == 6) {
-            return "june";
-        } else if (monthNumber == 7) {
-            return "july";
-        } else if (monthNumber == 8) {
-            return "august";
-        } else if (monthNumber == 9) {
-            return "september";
-        } else if (monthNumber == 10) {
-            return "october";
-        } else if (monthNumber == 11) {
-            return "november";
-        } else
-            return "december";
-    }
+//    public static String whatMonth(final int monthNumber) {
+//        if (monthNumber == 1) {
+//            return "january";
+//        } else if (monthNumber == 2) {
+//            return "february";
+//        } else if (monthNumber == 3) {
+//            return "march";
+//        } else if (monthNumber == 4) {
+//            return "april";
+//        } else if (monthNumber == 5) {
+//            return "may";
+//        } else if (monthNumber == 6) {
+//            return "june";
+//        } else if (monthNumber == 7) {
+//            return "july";
+//        } else if (monthNumber == 8) {
+//            return "august";
+//        } else if (monthNumber == 9) {
+//            return "september";
+//        } else if (monthNumber == 10) {
+//            return "october";
+//        } else if (monthNumber == 11) {
+//            return "november";
+//        } else
+//            return "december";
+//    }
 }
 
