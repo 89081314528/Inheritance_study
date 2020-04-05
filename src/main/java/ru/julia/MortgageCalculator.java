@@ -17,16 +17,17 @@ public class MortgageCalculator {
 //        System.out.println("Переплата по кредиту " + Math.rint(100 * (monthlyPayment * loanTerm - loanDebt) / 100));
         double currentLoanAmount = loanDebt;
         double monthlyEarlyPayment = 1000;
-//        double oneTimeEarlyPaymentAmount = 5000;
-//        double oneTimeEarlyPaymentMonth = 3; // 1 это февраль. предполагаем, что погашение происходит в начале месяца
+        double oneTimeEarlyPaymentAmount = 2000;
+        double oneTimeEarlyPaymentMonth = 4; // 1 это февраль. предполагаем, что погашение происходит в начале месяца
         for (int i = 0; i < loanTerm; i++) {
-//            if (i == oneTimeEarlyPaymentMonth) {
-//                monthlyPayment = (currentLoanAmount - oneTimeEarlyPaymentAmount) * monthInterestRate /
-//                        (1 - Math.pow(1 + monthInterestRate, -(loanTerm - i)));
-//                System.out.println("Досрочное погашение " + oneTimeEarlyPaymentAmount);
-//                System.out.println("Новый ежемесячный платеж " + Math.rint(100 * monthlyPayment) / 100);
-//                currentLoanAmount = currentLoanAmount - oneTimeEarlyPaymentAmount;
-//            }
+            if (i == oneTimeEarlyPaymentMonth) {
+                monthlyPayment = (currentLoanAmount - oneTimeEarlyPaymentAmount) * monthInterestRate /
+                        (1 - Math.pow(1 + monthInterestRate, -(loanTerm - i)));
+                System.out.println("Разовое досрочное погашение " + oneTimeEarlyPaymentAmount);
+                System.out.println("Остаток основного долга " + Math.rint(100 * currentLoanAmount) / 100);
+                System.out.println("Новый ежемесячный платеж " + Math.rint(100 * monthlyPayment) / 100);
+                currentLoanAmount = currentLoanAmount - oneTimeEarlyPaymentAmount;
+            }
             double currentInterestPayment = currentLoanAmount * monthInterestRate;
             double currentLoanPayment = monthlyPayment - currentInterestPayment;
             currentLoanAmount = currentLoanAmount - currentLoanPayment;
