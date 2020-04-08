@@ -17,16 +17,22 @@ public class MortgageCalculator {
 //        System.out.println("Переплата по кредиту " + Math.rint(100 * (monthlyPayment * loanTerm - loanDebt) / 100));
         double currentLoanAmount = loanDebt;
         double monthlyEarlyPayment = 1000;
-        double oneTimeEarlyPaymentAmount = 2000;
-        double oneTimeEarlyPaymentMonth = 4; // 1 это февраль. предполагаем, что погашение происходит в начале месяца
+        // предполагаем, что ежемесячное досрочное погашение начинается с января
+        //1 это февраль. предполагаем, что погашение происходит в начале месяца 1 числа
+        OneTimeEarlyPayment[] oneTimeEarlyPayment = {
+                new OneTimeEarlyPayment(2000, 0),
+                new OneTimeEarlyPayment(2000, 1)};
+
         for (int i = 0; i < loanTerm; i++) {
-            if (i == oneTimeEarlyPaymentMonth) {
-                monthlyPayment = (currentLoanAmount - oneTimeEarlyPaymentAmount) * monthInterestRate /
-                        (1 - Math.pow(1 + monthInterestRate, -(loanTerm - i)));
-                System.out.println("Разовое досрочное погашение " + oneTimeEarlyPaymentAmount);
-                System.out.println("Остаток основного долга " + Math.rint(100 * currentLoanAmount) / 100);
-                System.out.println("Новый ежемесячный платеж " + Math.rint(100 * monthlyPayment) / 100);
-                currentLoanAmount = currentLoanAmount - oneTimeEarlyPaymentAmount;
+            for (int a = 0; a < oneTimeEarlyPayment.length; a++) {
+                if (i == oneTimeEarlyPayment[a].getOneTimeEarlyPaymentMonth()) {
+                    monthlyPayment = (currentLoanAmount - oneTimeEarlyPayment[a].getOneTimeEarlyPaymentAmount()) * monthInterestRate /
+                            (1 - Math.pow(1 + monthInterestRate, -(loanTerm - i)));
+                    System.out.println("Разовое досрочное погашение " + oneTimeEarlyPayment[a].getOneTimeEarlyPaymentAmount());
+                    currentLoanAmount = currentLoanAmount - oneTimeEarlyPayment[a].getOneTimeEarlyPaymentAmount();
+                    System.out.println("Остаток основного долга " + Math.rint(100 * currentLoanAmount) / 100);
+                    System.out.println("Новый ежемесячный платеж " + Math.rint(100 * monthlyPayment) / 100);
+                }
             }
             double currentInterestPayment = currentLoanAmount * monthInterestRate;
             double currentLoanPayment = monthlyPayment - currentInterestPayment;
