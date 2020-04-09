@@ -5,6 +5,8 @@ package ru.julia;
  * распечатать график платежей, с делением на сумму долга и проценты
  * 3 варианта досрочного погашения - каждый месяц, в конкретный месяц, в комбинации
  * вывод - проценты, долг, платеж и сумма досрочного погашения в этом месяце
+ * дз:
+ * 1) объединить две задачи - потом
  */
 public class MortgageCalculator {
     public static void main(String[] args) {
@@ -17,19 +19,20 @@ public class MortgageCalculator {
 //        System.out.println("Переплата по кредиту " + Math.rint(100 * (monthlyPayment * loanTerm - loanDebt) / 100));
         double currentLoanAmount = loanDebt;
         double monthlyEarlyPayment = 1000;
-        // предполагаем, что ежемесячное досрочное погашение начинается с января
+        // предполагаем, что ежемесячное досрочное погашение начинается с февраля
         //1 это февраль. предполагаем, что погашение происходит в начале месяца 1 числа
-        OneTimeEarlyPayment[] oneTimeEarlyPayment = {
+        OneTimeEarlyPayment[] oneTimeEarlyPayments = {
                 new OneTimeEarlyPayment(2000, 0),
                 new OneTimeEarlyPayment(2000, 1)};
 
         for (int i = 0; i < loanTerm; i++) {
-            for (int a = 0; a < oneTimeEarlyPayment.length; a++) {
-                if (i == oneTimeEarlyPayment[a].getOneTimeEarlyPaymentMonth()) {
-                    monthlyPayment = (currentLoanAmount - oneTimeEarlyPayment[a].getOneTimeEarlyPaymentAmount()) * monthInterestRate /
+            for (int a = 0; a < oneTimeEarlyPayments.length; a++) {
+                OneTimeEarlyPayment payment = oneTimeEarlyPayments[a];
+                if (i == payment.getOneTimeEarlyPaymentMonth()) {
+                    monthlyPayment = (currentLoanAmount - payment.getOneTimeEarlyPaymentAmount()) * monthInterestRate /
                             (1 - Math.pow(1 + monthInterestRate, -(loanTerm - i)));
-                    System.out.println("Разовое досрочное погашение " + oneTimeEarlyPayment[a].getOneTimeEarlyPaymentAmount());
-                    currentLoanAmount = currentLoanAmount - oneTimeEarlyPayment[a].getOneTimeEarlyPaymentAmount();
+                    System.out.println("Разовое досрочное погашение " + payment.getOneTimeEarlyPaymentAmount());
+                    currentLoanAmount = currentLoanAmount - payment.getOneTimeEarlyPaymentAmount();
                     System.out.println("Остаток основного долга " + Math.rint(100 * currentLoanAmount) / 100);
                     System.out.println("Новый ежемесячный платеж " + Math.rint(100 * monthlyPayment) / 100);
                 }
