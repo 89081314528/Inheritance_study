@@ -47,8 +47,8 @@ public class Dietary {
                 if (sum > 800) {
                     day = day + 1;
                     System.out.println("Итого " + (sum - products[i].getCalories()) + " день " + day);
-                    sum = 0;
-                    i = i - 1;
+                    System.out.print(products[i].getName() + " " + products[i].getCalories() + " ");
+                    sum = products[i].getCalories();
                 }
             }
         }
