@@ -33,8 +33,8 @@ public class Dietary {
                 new Product("cremsoup", 400),
                 new Product("chahohbily", 500),
                 new Product("mimoza", 500),
-                new Product("seledkapodshuboy", 600),
-                new Product("brendy", 600),
+                new Product("seledkapodshuboy", 800),
+                new Product("brendy", 50),
                 new Product("beer", 300),
                 new Product("icecream", 400),
         };
