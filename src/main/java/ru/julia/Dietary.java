@@ -5,6 +5,10 @@ package ru.julia;
  * 1500 в день. в 1 день человек ест, во второй день продукты не должны повторяться. берем продукты по порядку и проверяем,
  * чтобы у нескольких подряд было не больше 1500 калорий.
  * 2 часть. например в первой части получилось расписание на 10 дней. надо сделать на 15.
+ * сделать чтобы печатался последний день
+ *
+ * есть массив чисел и нулей. есть лист - нужно в первый элемент листа положить сумму числел до 1 нуля.
+ * 2 вариантт - с массивом из 100 элементов. лишние - нули.
  */
 public class Dietary {
     public static void main(String[] args) {
@@ -30,7 +34,7 @@ public class Dietary {
                 new Product("chahohbily", 500),
                 new Product("mimoza", 500),
                 new Product("seledkapodshuboy", 600),
-                new Product("brendy", 300),
+                new Product("brendy", 600),
                 new Product("beer", 300),
                 new Product("icecream", 400),
         };
@@ -42,13 +46,21 @@ public class Dietary {
             } else {
                 sum = sum + products[i].getCalories();
                 if (sum <= 800) {
-                    System.out.print(products[i].getName() + " " + products[i].getCalories() + " ");
+                    if (i == 23) {
+                        System.out.print(products[i].getName() + " " + products[i].getCalories() + " ");
+                        System.out.println("Итого " + sum + " день " + (day + 1));
+                    } else {
+                        System.out.print(products[i].getName() + " " + products[i].getCalories() + " ");
+                    }
                 }
                 if (sum > 800) {
                     day = day + 1;
                     System.out.println("Итого " + (sum - products[i].getCalories()) + " день " + day);
                     System.out.print(products[i].getName() + " " + products[i].getCalories() + " ");
                     sum = products[i].getCalories();
+                    if (i == 23) {
+                        System.out.println("Итого " + sum + " день " + (day + 1));
+                    }
                 }
             }
         }
