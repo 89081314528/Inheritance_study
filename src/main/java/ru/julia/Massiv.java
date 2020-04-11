@@ -6,14 +6,15 @@ package ru.julia;
  */
 public class Massiv {
     public static void main(String[] args) {
-       Integer [] massiv = new Integer[50];
-       Integer [] massivSum = new Integer[50];
-        for (int i = 0; i < 50; i++) {
-            massiv[i] = (int)(Math.random() * 10);
+        int massivSize = 50;
+        Integer[] massiv = new Integer[massivSize];
+        Integer[] massivSum = new Integer[massivSize];
+        for (int i = 0; i < massiv.length; i++) {
+            massiv[i] = (int) (Math.random() * 10);
             System.out.print(massiv[i] + " ");
         }
         System.out.println();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < massivSum.length; i++) {
             massivSum[i] = 0;
             System.out.print(massivSum[i] + " ");
         }
@@ -22,7 +23,7 @@ public class Massiv {
         int sum = 0;
         int countNul = 0;
         int lastNul = 0;
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < massiv.length; i++) {
             if (massiv[i] == 0) {
                 countNul = countNul + 1;
                 lastNul = i;
@@ -34,12 +35,12 @@ public class Massiv {
                 sum = 0;
             }
         }
-        if (lastNul < 49 || countNul == 0) {
+        if (lastNul < (massiv.length - 1) || countNul == 0) {
             massivSum[numberInMassivSum] = sum;
         }
         System.out.println("Количество нулей " + countNul);
         System.out.println("Номер последнего нуля " + lastNul);
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < massivSum.length; i++) {
             System.out.print(massivSum[i] + " ");
         }
     }
