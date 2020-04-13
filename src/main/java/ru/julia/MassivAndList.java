@@ -12,10 +12,9 @@ public class MassivAndList {
     public static void main(String[] args) {
         List<Integer> list1 = List.of(
                 10, 40, 30, 20);
-        List<Integer> list2 = List.of(
-                50, 60);
-        List<Integer> list3 = List.of(
-                70, 80, 90);
-        ListIntov listIntov = new ListIntov(list1, list2, list3);
+        List <ListIntov> listIntovs = List.of(
+                new ListIntov(list1),
+                new ListIntov(list1),
+                new ListIntov(list1));
     }
 }
